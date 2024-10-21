@@ -38,7 +38,7 @@ public class Customer {
             total += a.interestEarned();
         return total;
     }
-<<<<<<< HEAD
+
     // Method to generate a statement detailing all accounts and transactions
     public String getStatement() {
         String statement = "Statement for " + name + "\n";
@@ -46,7 +46,7 @@ public class Customer {
         for (Account a : accounts) {
             statement += "\n" + statementForAccount(a) + "\n";
             total += a.sumTransactions();// Sum the total transactions for all accounts
-=======
+
     public List<TransactionSummary> getTransactionSummary() {
         List<TransactionSummary> summaries = new ArrayList<>();
         for (Account a : accounts) {
@@ -61,7 +61,6 @@ public class Customer {
             }
             summary.setTotal(toDollars(total));
             summaries.add(summary);
->>>>>>> 595dc4151318720f3b1092676d28045cf085d9c5
         }
         return summaries;
     }
@@ -78,16 +77,7 @@ public class Customer {
     private String toDollars(double d) {
         return String.format("$%,.2f", abs(d));
     }
-<<<<<<< HEAD
 
-    // New transfer method
-//    public void transfer(Account fromAccount, Account toAccount, double amount) {
-//        fromAccount.withdraw(amount);
-//        toAccount.deposit(amount);
-//    }
-//}
-=======
->>>>>>> 595dc4151318720f3b1092676d28045cf085d9c5
     // New transfer method to transfer funds between accounts
     public void transfer(Account fromAccount, Account toAccount, double amount) {
         //checking for null accounts

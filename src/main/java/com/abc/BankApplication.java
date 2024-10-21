@@ -18,21 +18,15 @@ public class BankApplication implements CommandLineRunner {
 
         Customer customer = new Customer("Rahul");
         bank.addCustomer(customer);
-<<<<<<< HEAD
+
    //creating different types of accounts to customers
-=======
-//creating different types of accounts to customers
->>>>>>> 595dc4151318720f3b1092676d28045cf085d9c5
         Account checkingAccount = new Account(Account.CHECKING);
         Account savingsAccount = new Account(Account.SAVINGS);
         Account maxiSavingsAccount = new Account(Account.MAXI_SAVINGS);
         Account superSavingsAccount = new Account(Account.SUPER_SAVINGS);
-<<<<<<< HEAD
+
 
         //accounts for the customers
-=======
-//accounts for customers
->>>>>>> 595dc4151318720f3b1092676d28045cf085d9c5
         customer.openAccount(checkingAccount);
         customer.openAccount(savingsAccount);
         customer.openAccount(maxiSavingsAccount);
@@ -48,8 +42,8 @@ public class BankApplication implements CommandLineRunner {
         customer.transfer(checkingAccount, savingsAccount, 500);
 
         // Output statements
-//        System.out.println(customer.getStatement());
-//
+      // System.out.println(customer.getStatement());
+
       ObjectMapper objectMapper = new ObjectMapper();
       String jsonSummary = objectMapper.writerWithDefaultPrettyPrinter()
         .writeValueAsString(customer.getTransactionSummary());
