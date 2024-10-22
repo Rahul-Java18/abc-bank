@@ -1,5 +1,7 @@
 package com.abc;
 
+import com.abc.transactionsummary.TransactionSummary;
+
 import java.util.ArrayList;
 import java.util.List;
 import static java.lang.Math.abs;
@@ -103,6 +105,24 @@ public class Customer {
         }
         return summaries;
     }
+//public String getTransactionSummary() {
+//    StringBuilder summary = new StringBuilder();
+//    summary.append("Statement for ").append(name).append("\n\n");
+//
+//    double totalBalance = 0.0;
+//
+//    for (Account account : accounts) {
+//        TransactionSummary transactionSummary = new TransactionSummary(accountTypeName(account)); // Assuming each Account has a getTransactionSummary method
+//        summary.append(transactionSummary.toString()); // Use toString() for formatted output
+//        totalBalance += account.sumTransactions(); // Assuming there's a method to get the current balance
+//    }
+//
+//    summary.append("\nTotal In All Accounts ").append(toDollars(totalBalance)).append("\n");
+//    return summary.toString();
+//}
+
+
+
 
     private String accountTypeName(Account account) {
         switch (account.getAccountType()) {

@@ -1,7 +1,11 @@
-package com.abc;
+package com.abc.transactionsummary;
 
+import com.abc.TransactionDetail;
+import com.abc.transactionsummary.*;
 import java.util.ArrayList;
 import java.util.List;
+
+
 //To get transactions summary
 public class TransactionSummary {
     private String accountType;
@@ -33,23 +37,18 @@ public class TransactionSummary {
     public void addTransaction(TransactionDetail transaction) {
         transactions.add(transaction);
     }
-}
-//transactions of individual account details
-class TransactionDetail {
-    private String type;
-    private String amount;
+    @Override
+    public String toString() {
+        StringBuilder summary = new StringBuilder();
+        summary.append(accountType).append(accountType).append("\n\n");
 
-    public TransactionDetail(String type, String amount) {
-        this.type = type;
-        this.amount = amount;
-    }
+        // Add each transaction and the total
+        for (TransactionDetail transaction : transactions) {
+            summary.append("  ").append(transaction.getType())
+                    .append(" ").append(transaction.getAmount()).append("\n");
+        }
+        summary.append("Total ").append(total).append("\n");
 
-    public String getType() {
-        return type;
-    }
-
-    public String getAmount() {
-        return amount;
+        return summary.toString();
     }
 }
-
